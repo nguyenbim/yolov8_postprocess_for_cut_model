@@ -2,10 +2,15 @@
 Postprocessing for new sota object detection model yolov8n. The models here is yolov8n cut version (cut all last postprocess layers)
 
 When deploying yolov8 model to many AI devices like AI edge devices, SoCs,... The full version of yolov8 is not compatible because it contains some postprocess layers. When removes those layers, the postprocess published by yolov8 author is not available anymore. 
+<p align="center">
+  <img src="images/input_output_infos_3.png">
+  <i>Input and output of yolov8n onnx model, red rectangle is part of postprocess already in the model </i>
+</p>
+
 
 To modify onnx model (cutting, adding layers), I used onnx-modifier tool, source: <a href="https://github.com/ZhangGe6/onnx-modifier"> onnx-modifier-tool </a>
 # For python
-The python code is postproces code in Python with provided model yolov8n_cut.onnx
+The python code is postproces code in Python with provided model yolov8n_cut.onnx. Output of model is 6 outputs of 6 last convolution layers. (cut all layers after 6 last convolution layers)
 <p align="center">
   <img src="images/input_output_infos_2.png">
   <i>Input and output of yolov8 onnx model after cutting all postprocess layers</i>
