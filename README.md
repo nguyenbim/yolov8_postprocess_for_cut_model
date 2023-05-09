@@ -25,7 +25,7 @@ The C++ code is postprocess code for SoCs device (here is Qualcomm SoCs), the pr
 
 (Notes: </br>
        - For each SoCs, the output of model process is different based on device's architecture, that makes the postprocess different. </br>
-       - Based on my experiments, this model is very sensitive with input color space, make sure the input image is RGB before send its data to the model)
+       - Based on my experiments, my yolov8n model is very sensitive with input color space, make sure the input image is RGB before send its data to the model)
 
 <p align="center">
   <img src="images/input_output_infos.png">
