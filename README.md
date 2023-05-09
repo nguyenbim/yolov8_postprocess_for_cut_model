@@ -23,7 +23,8 @@ The python code is postproces code in Python with provided model yolov8n_cut.onn
 # For C++ in Qualcomm SoCs using SNPE sdk 1.52
 The C++ code is postprocess code for SoCs device (here is Qualcomm SoCs), the provided onnx modified_yolov8n_cut.onnx will be use to convert to the compatible form with the SoCs. To optimize postprocess, I added sigmoid layers after all cls convolution layers (3 last convolution layers BCHW with C = 80), that means I do not need to do sigmoid in postprocess, the sigmoid will be handled in model running phase.
 
-(Note: - For each SoCs, the output of model process is different based on device's architecture, that makes the postprocess different. </br>
+(Notes: </br>
+       - For each SoCs, the output of model process is different based on device's architecture, that makes the postprocess different. </br>
        - Based on my experiments, this model is very sensitive with input color space, make sure the input image is RGB before send its data to the model)
 
 <p align="center">
